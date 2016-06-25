@@ -1,9 +1,5 @@
 # -*- coding: utf-8 -*-
-'''
-'''
 
-import sndhdr
-import aifc, sunau, wave
 import numpy
 from pymongo import MongoClient()
 
@@ -83,7 +79,9 @@ class Dactyl(object):
            # downsample
            if true_sampling_rate > sampling_rate:
                data = self._resample(data, true_sampling_rate, sampling_rate)
-           # apply low pass filter
+           # apply low pass filter for antialiasing
+           if antialiasing:
+               data = self._lpf(data, sampling_rate)
 
 
     def db_query_fingerprint(self):
@@ -91,6 +89,3 @@ class Dactyl(object):
             Returns closest match.
         '''
         pass
-
-
-

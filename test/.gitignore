@@ -1,2 +1,10 @@
-__pycache__
+# byte code
+__pycache__/
 *.pyc
+
+# ipython notebooks
+.ipynb_checkpoints/
+*.ipynb
+
+# text files
+*.txt

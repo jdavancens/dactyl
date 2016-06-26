@@ -1,5 +1,0 @@
-load audio file into numpy array
-extract fingerprint from numpy array
-make a database
-add fingerprint plus metadata to database
-look up fingerprint
